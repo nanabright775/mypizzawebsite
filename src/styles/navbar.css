@@ -1,0 +1,108 @@
+.navbar {
+  background-color: #192b3a;
+  display: flex;
+}
+
+.navbar ul li {
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 3px;
+  transition: all 0.7s;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: start;
+  margin-left: 750px;
+}
+
+.navbar ul li:hover {
+  background-color: rgb(117, 113, 113);
+}
+
+.navbar .leftside img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar .rightSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar .rightSide button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar .rightSide svg {
+  font-size: 40px;
+}
+
+.navbar #open {
+  padding-left: 0px;
+}
+.navbar #open img {
+  display: none;
+
+}
+
+.navbar #close img {
+  display: inherit;
+}
+
+.navbar #open .hiddenLinks {
+  display: inherit;
+  margin-left: 30px;
+}
+
+.navbar #close .hiddenLinks {
+  display: none;
+}
+
+.navbar #open a {
+  width: 70px;
+  margin: 5px;
+}
+@media only screen and (max-width: 900px) {
+  .navbar .rightSide a {
+    width: 70px;
+  }
+  .navbar .leftSide {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .navbar .rightSide button {
+    display: flex;
+  }
+
+  .navbar .rightSide {
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+
+  .navbar .rightSide button {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar .rightSide button {
+    display: flex;
+  }
+
+  .hiddenLinks .rightSide{
+    display: flex;
+  }
+}
