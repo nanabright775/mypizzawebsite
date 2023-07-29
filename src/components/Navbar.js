@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import  "../styles/navbar.css"
-import Logo from  "../assets/pizzaLogo.png";
+import "../styles/navbar.css";
+import Logo from "../assets/pizzaLogo.png";
 import ReorderIcon from "@mui/icons-material/Reorder";
 
 export const navItems = [
@@ -11,21 +11,18 @@ export const navItems = [
   { label: "Contact", route: "contact" },
 ];
 
-
 const Navbar = () => {
   const [onsmallScreen, setonsmallScreen] = useState(false);
 
-  const toggleNavbar = () =>{
+  const toggleNavbar = () => {
     setonsmallScreen(!onsmallScreen);
-  }
-
-
+  };
 
   const navigate = useNavigate();
   return (
     <div className="navbar">
       <div className="leftside" id={onsmallScreen ? "open" : "close"}>
-        <img src={Logo} />
+        <img src={Logo} alt="pizza" />
         <div className="hiddenLinks">
           <ul>
             {navItems.map(({ label, route }) => (
@@ -41,7 +38,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className='rightSide'>
+      <div className="rightSide">
         <ul>
           {navItems.map(({ label, route }) => (
             <li
@@ -60,6 +57,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

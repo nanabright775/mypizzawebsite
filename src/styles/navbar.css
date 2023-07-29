@@ -3,6 +3,12 @@
   display: flex;
 }
 
+.navbar ul {
+  display: flex;
+  justify-content: start;
+  margin-left: 750px;
+}
+
 .navbar ul li {
   padding: 5px 10px;
   color: white;
@@ -11,12 +17,6 @@
   list-style: none;
   border-radius: 3px;
   transition: all 0.7s;
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: start;
-  margin-left: 750px;
 }
 
 .navbar ul li:hover {
@@ -28,12 +28,21 @@
   height: 50px;
 }
 
+.navbar .leftSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+
 .navbar .rightSide {
   flex: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 50px;
 }
 
 .navbar .rightSide button {
@@ -41,18 +50,19 @@
   border: none;
   color: white;
   cursor: pointer;
+  display: none; /* Hide the button by default */
 }
 
 .navbar .rightSide svg {
   font-size: 40px;
 }
 
-.navbar #open {
-  padding-left: 0px;
+.hiddenLinks {
+  display: none;
 }
+
 .navbar #open img {
   display: none;
-
 }
 
 .navbar #close img {
@@ -68,41 +78,36 @@
   display: none;
 }
 
-.navbar #open a {
-  width: 70px;
+.navbar #open ul {
+  width: 60px;
   margin: 5px;
 }
+
+/* Media query for screens with a maximum width of 900px */
 @media only screen and (max-width: 900px) {
-  .navbar .rightSide a {
+  .navbar .rightSide ul {
     width: 70px;
   }
   .navbar .leftSide {
-    padding-left: 10px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  
-  .navbar .rightSide button {
-    display: flex;
+    padding-left: 50px;
   }
 
-  .navbar .rightSide {
-    justify-content: flex-end;
-    padding-right: 50px;
-  }
-
-  .navbar .rightSide button {
+  /* Reset the display property for the button and .hiddenLinks */
+  .navbar .rightSide button,
+  .hiddenLinks {
     display: none;
   }
 }
 
-@media only screen and (min-width: 600px) {
-  .navbar .rightSide button {
-    display: flex;
+/* Media query for screens with a maximum width of 600px */
+@media only screen and (max-width: 600px) {
+  .navbar .rightSide ul {
+    display: none; /* Hide the regular navbar links */
   }
 
-  .hiddenLinks .rightSide{
-    display: flex;
+  /* Show the button and .hiddenLinks */
+  .navbar .rightSide button,
+  .hiddenLinks {
+    display: inline-block;
   }
 }
